@@ -67,6 +67,12 @@ async function run() {
     })
 
 
+    app.get('/allToys/:subCategory', async (req, res) => {
+      const category = req.params.subCategory;
+      const result = await toysCollection.find({ toyCategory: category }).toArray()
+      res.send(result)
+    })
+
     //server url for the added toys in the client site by user
     app.post("/addedToys", async (req, res) => {
       const body = req.body;
@@ -81,36 +87,27 @@ async function run() {
     //server url for ony matched email by the user visit the client site
     app.get('/myToys/:email', async (req, res) => {
       const email = req.params.email
-      console.log(req.params.email)
-      const result = await toysCollection.find({ sellerEmail: email }).toArray()
-      res.send(result)
+
+      const type = req.query.sort;
+      if (type == "ascending") {
+        let result = await toysCollection.find({ sellerEmail: email }).sort({ toyPrice: 1 }).toArray();
+        res.send(result)
+      }
+     else if (type == 'descending') {
+        let result = await toysCollection.find({ sellerEmail: email }).sort({ toyPrice: -1 }).toArray()
+        res.send(result)
+      }
+      else {
+        let result = await toysCollection.find({ sellerEmail: email }).toArray()
+        res.send(result)
+
+      }
+
     })
 
 
 
-    //route for update
-    // app.put('/addedToys/:id', async (req, res) => {
-    //   const id = req.params.id;
-    //   const updatedToys = req.body;
-    //   const options = {
-    //     upsert: true
-    //   }
-    //   // console.log(id)
-    //   // console.log(body);
 
-    //   const filter = { _id: new ObjectId(id) };
-    //   const toys = {
-    //     $set: {
-    //       toyPrice: updatedToys.toyPrice,
-    //       toyQuantity: updatedToys.toyQuantity,
-    //       toyDetails: updatedToys.toyDetails
-
-    //     },
-    //   };
-    //   const result = await toysCollection.updateOne(filter,toys,options );
-    //   res.send(result);
-    //   // console.log(updatedToys)
-    // });
 
     //route for user know the details for single product in client site
     app.get('/allToys/:id', async (req, res) => {
@@ -119,6 +116,8 @@ async function run() {
       const result = await toysCollection.findOne(query);
       res.send(result);
     })
+
+
 
 
 
@@ -142,7 +141,7 @@ async function run() {
 
 
     //route for the delete , then user delete his/her added product from the client site
-    app.delete('/addedToys/:id', async (req, res) => {
+    app.delete('/myToys/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) }
       const result = await toysCollection.deleteOne(query);
