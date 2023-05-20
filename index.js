@@ -141,7 +141,7 @@ async function run() {
   })
     
     
-    
+    //route for the delete , then user delete his/her added product from the client site
     app.delete('/addedToys/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) }
