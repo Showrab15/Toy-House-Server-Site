@@ -1,0 +1,94 @@
+[
+    {
+        "id": 1,
+        "name": "Super Mario",
+        "img": "https://i.ibb.co/DVPFNsy/sportscar1.jpg",
+        "price": "80.00",
+        "rating" : 5,
+        "description": "Introducing the Sports Super Mario Sports, a sleek and aerodynamic toy car designed to mimic the speed and agility of real-life sports cars. With its vibrant colors, bold racing stripes, and realistic detailing, this toy car is sure to ignite your child's passion for racing..",
+       "category": "Sports Car"
+       
+    },
+    {
+        "id": 2,
+        "name": "Minecraft Racing",
+        "img": "https://i.ibb.co/64qr6St/sportscar2.jpg",
+        "price": "100.00",
+        "rating" : 4,
+        "description": "Get ready to rev up the excitement with the Minecraft Racing. This high-performance toy car features a streamlined body, oversized wheels, and a spoiler for enhanced aerodynamics. It's the perfect companion for thrilling races and imaginative playtime adventures",
+       "category": "Sports Car"
+       
+    },
+    {
+        "id": 3,
+        "name": "God of War",
+        "img": "https://i.ibb.co/ssTwPty/sportscar3.jpg",
+        "price": "70.00",
+        "rating" : 5,
+        "description": "The God of War is the ultimate toy car for budding car enthusiasts. Its glossy finish, chrome accents, and adjustable spoiler add a touch of luxury to every playtime session. Let your child's imagination hit top gear as they zoom through imaginary race tracks and embark on thrilling adventures.",
+       "category": "Sports Car"
+       
+    },
+
+    {
+        "id": 4,
+        "name": "Crimefighter Cruiser",
+        "img": "https://i.ibb.co/n6h63L5/policecar1.jpg",
+        "price": "150.00",
+        "rating" : 5,
+        "description": "Get ready to enforce the law with the Crimefighter Cruiser! This rugged and powerful toy car features an authoritative design, complete with flashing lights, a siren sound, and realistic police decals. Let your child embark on exciting law enforcement adventures with this action-packed toy.",
+       "category": "Police Cars"
+       
+    },
+    {
+        "id": 5,
+        "name": "Highway Hero Patrol",
+        "img": "https://i.ibb.co/x38b4py/policecar2.jpg",
+        "price": "180.00",
+        "rating" : 4,
+        "description": "TheHighway Hero Patrol is here to maintain order and protect the city! With its sturdy construction, working doors, and removable police roof, this toy car provides endless opportunities for imaginative play. Your child will love patrolling the streets and apprehending imaginary criminals in style.",
+       "category": "Police Cars"
+       
+    },
+    {
+        "id": 6,
+        "name": "Emergency Response Unit",
+        "img": "https://i.ibb.co/ZLMTq7F/policecar3.jpg",
+        "price": "200.00",
+        "rating" : 5,
+        "description": "Introducing the Emergency Response Unit, the ultimate toy car for law enforcement adventures! With its spinning rotor blades, functional doors, and rescue winch, this versatile vehicle is perfect for simulated air rescues. Let your child's imagination soar as they navigate through thrilling police missions from above.",
+       "category": "Police Cars"
+       
+    },
+    {
+        "id": 7,
+        "name": "Blaze Buster",
+        "img": "https://i.ibb.co/mHBS8vW/firetrack1.jpg",
+        "price": "400.00",
+        "rating" : 5,
+        "description": "Prepare for heroic rescue missions with the Blaze Buster Truck! This rugged and realistic toy car features a working ladder, extendable hose, and flashing lights to tackle any pretend fire emergency. Let your child's imagination soar as they save the day and protect the city from imaginary flames.",
+       "category": "Fire Track Toys"
+       
+    },
+    {
+        "id": 8,
+        "name": "Rapid Rescue Rig",
+        "img": "https://i.ibb.co/TML0qGn/firetrack2.jpg",
+        "price": "200.00",
+        "rating" : 4,
+        "description": "Introducing the Rapid Rescue Rig , the ultimate fire truck toy for imaginative play. This action-packed vehicle features a rotating water cannon, extendable ladder, and emergency lights to create a lifelike fire-fighting experience. Let your child's creativity ignite as they heroically respond to every make-believe emergency.",
+       "category": "Fire Track Toys "
+       
+    },
+    {
+        "id": 9,
+        "name": "Fire Chief's Rescue Truck",
+        "img": "https://i.ibb.co/cxyfJKY/firetrack3.jpg",
+        "price": "180.00",
+        "rating" : 5,
+        "description": "Join the ranks of the fire department with the Fire Chief's Rescue Truck! This impressive toy car comes equipped with a powerful water pump, realistic sirens, and opening doors for maximum playtime excitement. Your child will love pretending to be a firefighter, rushing to extinguish fires and save the day.",
+       "category": "Fire Track Toys "
+       
+    }
+   
+]
