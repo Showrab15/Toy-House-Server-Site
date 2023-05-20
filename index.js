@@ -47,6 +47,7 @@ async function run() {
 
 
 
+    //url for the search by name in my toy pages
     app.get('/searchByName/:text', async (req, res) => {
       const searchText = req.params.text;
       const result = await toysCollection.find({
@@ -59,13 +60,14 @@ async function run() {
     })
     
 
-
+//server url for the all toys by added user
     app.get('/allToys', async(req, res)=>{
       const result = await toysCollection.find().limit(20).toArray();
       res.send(result)
     })
 
 
+    //server url for the added toys
     app.post("/addedToys", async (req, res) => {
       const body = req.body;
       const result = await toysCollection.insertOne(body);
@@ -76,12 +78,7 @@ async function run() {
     
    
     
-    
-    
-    
-    
-   
-    
+    //server url for ony matched email by the user visit the client site
     app.get('/myToys/:email', async(req,res)=>{
       const email = req.params.email
       console.log(req.params.email)
