@@ -112,7 +112,7 @@ async function run() {
     //   // console.log(updatedToys)
     // });
     
-    //route for update
+    //route for update url , then client site user can update her/his data
     app.get('/allToys/:id', async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) }
