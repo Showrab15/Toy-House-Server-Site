@@ -51,42 +51,42 @@ async function run() {
     app.get('/searchByName/:text', async (req, res) => {
       const searchText = req.params.text;
       const result = await toysCollection.find({
-          $or: [
-              { toyName: { $regex: searchText, $options: "i" } }
-          ],
+        $or: [
+          { toyName: { $regex: searchText, $options: "i" } }
+        ],
       })
-          .toArray()
+        .toArray()
       res.send(result)
     })
-    
 
-//server url for the all toys by added user
-    app.get('/allToys', async(req, res)=>{
+
+    //server url for the all toys by added user
+    app.get('/allToys', async (req, res) => {
       const result = await toysCollection.find().limit(20).toArray();
       res.send(result)
     })
 
 
-    //server url for the added toys
+    //server url for the added toys in the client site by user
     app.post("/addedToys", async (req, res) => {
       const body = req.body;
       const result = await toysCollection.insertOne(body);
       res.send(result);
       console.log(result);
-      
+
     });
-    
-   
-    
+
+
+
     //server url for ony matched email by the user visit the client site
-    app.get('/myToys/:email', async(req,res)=>{
+    app.get('/myToys/:email', async (req, res) => {
       const email = req.params.email
       console.log(req.params.email)
-      const result = await toysCollection.find({sellerEmail:email}).toArray()
+      const result = await toysCollection.find({ sellerEmail: email }).toArray()
       res.send(result)
     })
-    
-    
+
+
 
     //route for update
     // app.put('/addedToys/:id', async (req, res) => {
@@ -104,14 +104,14 @@ async function run() {
     //       toyPrice: updatedToys.toyPrice,
     //       toyQuantity: updatedToys.toyQuantity,
     //       toyDetails: updatedToys.toyDetails
-         
+
     //     },
     //   };
     //   const result = await toysCollection.updateOne(filter,toys,options );
     //   res.send(result);
     //   // console.log(updatedToys)
     // });
-    
+
     //route for user know the details for single product in client site
     app.get('/allToys/:id', async (req, res) => {
       const id = req.params.id;
@@ -122,7 +122,7 @@ async function run() {
 
 
 
-//route for update url , then client site user can update her/his data
+    //route for update url , then client site user can update her/his data
     app.put('/allToys/:id', async (req, res) => {
       const id = req.params.id;
       console.log(id)
@@ -130,17 +130,17 @@ async function run() {
       const options = { upsert: true };
       const updatedToys = req.body;
       const toys = {
-          $set: {
-            toyPrice: updatedToys.toyPrice,
+        $set: {
+          toyPrice: updatedToys.toyPrice,
           toyQuantity: updatedToys.toyQuantity,
           toyDetails: updatedToys.toyDetails,
-          }
+        }
       }
       const result = await toysCollection.updateOne(filter, toys, options)
       res.send(result)
-  })
-    
-    
+    })
+
+
     //route for the delete , then user delete his/her added product from the client site
     app.delete('/addedToys/:id', async (req, res) => {
       const id = req.params.id;
@@ -148,7 +148,8 @@ async function run() {
       const result = await toysCollection.deleteOne(query);
       res.send(result)
     })
-    
+
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
