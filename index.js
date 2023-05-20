@@ -10,11 +10,13 @@ app.use(cors());
 app.use(express.json());
 
 
+//home server path
 app.get('/', (req, res) => {
   res.send('Assignment Eleven is running')
 })
 
 
+//mongodb uri with password and username of the projects
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.j5l9lxb.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -39,6 +41,8 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+
+    //collection of my database with the name of toysCollection
     const toysCollection = client.db('ToysDB').collection('allToys');
 
 
