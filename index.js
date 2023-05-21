@@ -39,7 +39,7 @@ async function run() {
 
 
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
 
     //collection of my database with the name of toysCollection
@@ -124,11 +124,9 @@ async function run() {
     //route for update url , then client site user can update her/his data
     app.put('/updatedtoysData/:id', async (req, res) => {
       const id = req.params.id;
-      console.log(id)
       const filter = { _id: new ObjectId(id) }
       const options = { upsert: true };
       const updatedToys = req.body;
-      console.log(id, updatedToys)
 
       const toys = {
         $set: {
@@ -140,6 +138,9 @@ async function run() {
       const result = await toysCollection.updateOne(filter, toys, options)
       res.send(result)
     })
+
+
+
 
 
     //route for the delete , then user delete his/her added product from the client site
@@ -159,13 +160,6 @@ async function run() {
     // await client.close();
   }
 }
-
-
-
-
-
-
-
 
 
 
